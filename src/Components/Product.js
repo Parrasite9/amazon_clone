@@ -2,6 +2,12 @@ import React from 'react'
 import '../CSS Files/Product.css'
 
 function Product({title, image, price, rating}) {
+
+  const addToCart= () => {
+    // ADD ITEM TO DATA LAYER 
+    
+  }
+
   return (
     <div className='product'>
         {/* PRODUCT DESCRIPTION & PRICE  */}
@@ -22,7 +28,7 @@ function Product({title, image, price, rating}) {
 
       <img src={image} />
 
-      <button>Add to Cart</button>
+      <button onClick={addToCart}>Add to Cart</button>
     </div>
   )
 }
