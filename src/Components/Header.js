@@ -72,6 +72,3 @@ function Header() {
 }
 
 export default Header
-
-// https://i.imgur.com/pnl9XZv.png
-{/* <a href="https://imgur.com/pnl9XZv"><img src="" title="source: imgur.com" /></a> */}
