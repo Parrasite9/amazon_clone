@@ -2,7 +2,7 @@ import React from 'react'
 import '../CSS Files/Product.css'
 import { useStateValue } from './StateProvider'
 
-function Product({title, image, price, rating}) {
+function Product({id, title, image, price, rating}) {
 
   const [{ cart }, dispatch] = useStateValue()
 
@@ -13,7 +13,7 @@ function Product({title, image, price, rating}) {
     dispatch({
       type: "ADD_TO_CART",
       item: {
-        // id: id,
+        id: id,
         title: title,
         image: image,
         price: price,

@@ -12,14 +12,18 @@ function Checkout() {
             <div>
                 <h2 className='checkout_title'>Your Shopping Cart</h2>
 
-                <h2>The Subtotal will go here</h2>
+                {/* CHECKOUT PRODUCT  */}
+                
+                {/* CHECKOUT PRODUCT  */}
 
-                {/* CART ITEM  */}
-                {/* CART ITEM  */}
-                {/* CART ITEM  */}
-                {/* CART ITEM  */}
-                {/* CART ITEM  */}
-                {/* CART ITEM  */}
+                {/* CHECKOUT PRODUCT  */}
+
+                {/* CHECKOUT PRODUCT  */}
+
+                {/* CHECKOUT PRODUCT  */}
+
+                {/* CHECKOUT PRODUCT  */}
+
             </div>
         </div>
 
