@@ -17,14 +17,17 @@ function Login() {
         e.preventDefault()
 
         // SOME FANCY FIREBASE LOGIN 
-
-
+        auth.signInWithEmailAndPassword(email, password).then((auth) => {
+            navigate('/')
+        })
+        .catch(error => alert(error.message))
     }
 
     const register = (e) => {
         // PREVENTS PAGE FROM REFRESHING 
         e.preventDefault()
 
+        // SOME FANCY FIREBASE ACCOUNT CREATION
         auth.createUserWithEmailAndPassword(email, password).then((auth) => {
             // IT SUCCESSFULLY CREATED A NEW USER WITH EMAIL & PASSWORD 
             console.log(auth);
@@ -34,8 +37,6 @@ function Login() {
             }
         })
         .catch(error => (error.message))
-
-        // SOME FANCY FIREBASE ACCOUNT CREATION
     }
 
   return (
