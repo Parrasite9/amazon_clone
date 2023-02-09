@@ -9,6 +9,7 @@ import { Routes, Route } from 'react-router-dom'
 import Header from './Components/Header'
 import Home from './Components/Home'
 import Checkout from './Components/Checkout'
+import Login from './Components/Login'
 
 // ==========================
 //    MATERIAL UI ICONS
@@ -18,9 +19,9 @@ const App = () => {
 
   return (
     <>
-      <Header />
 
       <Routes>
+        <Route path="/login" element={<Login />} />
         
         <Route path='/checkout' element={<Checkout />} />
 
