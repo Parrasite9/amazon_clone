@@ -1,5 +1,5 @@
 import React from 'react'
-import '../CSS Files/Checkout.css'
+import '../CSS Files/CheckoutProduct.css'
 
 
 function CheckoutProduct({id, image, title, price, rating}) {
@@ -17,15 +17,17 @@ function CheckoutProduct({id, image, title, price, rating}) {
             <small>$</small>
             <strong>{price}</strong>
         </p>
-      </div>
 
-      {/* PRODUCT RATING  */}
-      <div className='checkoutProduct_rating'>
-        {Array(rating).fill().map((_, i) => (
-            <p>⭐</p>
-        ))}
+        {/* PRODUCT RATING  */}
+        <div className='checkoutProduct_rating'>
+            {Array(rating).fill().map((_, i) => (
+                <p>⭐</p>
+            ))}
+        </div>
+
+        {/* REMOVE PRODUCT BUTTON  */}
+        <button>Remove From Cart</button>
       </div>
-      <button>Remove From Cart</button>
     </div>
   )
 }
