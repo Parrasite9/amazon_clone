@@ -4,7 +4,7 @@ import { useStateValue } from './StateProvider'
 
 function Product({title, image, price, rating}) {
 
-  const [state, dispatch] = useStateValue()
+  const [{ cart }, dispatch] = useStateValue()
 
   console.log('This is the basket: ');
 
@@ -12,7 +12,7 @@ function Product({title, image, price, rating}) {
     // ADD ITEM TO DATA LAYER 
     dispatch({
       type: "ADD_TO_CART",
-      cart: {
+      item: {
         // id: id,
         title: title,
         image: image,
