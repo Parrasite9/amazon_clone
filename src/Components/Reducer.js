@@ -20,8 +20,11 @@ const reducer = (state, action) => {
             const index = state.cart.findIndex(
                 (cartItem) => cartItem.id === action.id
             );
+
+            // NEWCART CREATES A COPY OF THE CURRENT ARRAY THAT CONTAINS THE ITEMS IN CART 
             let newCart = [...state.cart]
 
+            // SPLICE ALLOWS THE SELECTED ITEM TO BE CUT FROM THE ARRAY 
             if (index >= 0) {
                 newCart.splice(index, 1);
 
@@ -31,6 +34,7 @@ const reducer = (state, action) => {
                 );
             }
 
+            // THIS IS SAYING "HEY THE CURRENT STATE IS NOW THE NEWCART"
             return {
                 ...state, cart: newCart
             }
