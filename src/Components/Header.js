@@ -12,8 +12,13 @@ import { ShoppingBasket } from '@mui/icons-material';
 //    REACT ROUTER
 // ==========================
 import { Link } from 'react-router-dom';
+import { useStateValue } from './StateProvider';
 
 function Header() {
+
+  const [ {cart} , dispatch] = useStateValue()
+
+
   return (
     <div className='header'>
       
@@ -62,7 +67,7 @@ function Header() {
         <Link to='/checkout'>
           <div className='header_optionBasket'>
               <ShoppingBasket />
-              <span className='header_toptionLineTwo header_basketCount'>0</span>
+              <span className='header_toptionLineTwo header_basketCount'>{cart?.length}</span>
           </div>
         </Link>
 
