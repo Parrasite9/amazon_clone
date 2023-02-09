@@ -1,9 +1,13 @@
+import userEvent from '@testing-library/user-event'
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import '../CSS Files/Login.css'
+import { auth } from '../Firebase/firebase'
 
 
 function Login() {
+
+    const navigate = useNavigate();
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -20,6 +24,16 @@ function Login() {
     const register = (e) => {
         // PREVENTS PAGE FROM REFRESHING 
         e.preventDefault()
+
+        auth.createUserWithEmailAndPassword(email, password).then((auth) => {
+            // IT SUCCESSFULLY CREATED A NEW USER WITH EMAIL & PASSWORD 
+            console.log(auth);
+            // ONCE ACCOUNT HAS BEEN CREATED, THE PAGE IS REROUTED TO HOME PAGE 
+            if (auth) {
+                navigate('/')
+            }
+        })
+        .catch(error => (error.message))
 
         // SOME FANCY FIREBASE ACCOUNT CREATION
     }
