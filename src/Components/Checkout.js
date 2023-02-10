@@ -8,7 +8,7 @@ import Header from './Header'
 
 function Checkout() {
 
-  const [{ cart }, dispatch] = useStateValue()
+  const [{ cart, user }, dispatch] = useStateValue()
 
   return (
 
@@ -20,6 +20,8 @@ function Checkout() {
               <img className='checkout_ad' src='https://i.imgur.com/mryRfK4.jpg' alt=''/>
 
               <div>
+                  {/* EMAIL IS NOT BEING DISPLAYED FOR SOME REASON  */}
+                  <h3>{user?.email}</h3>
                   <h2 className='checkout_title'>Your Shopping Cart</h2>
 
                   {cart.map(item => (
