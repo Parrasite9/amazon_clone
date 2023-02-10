@@ -6,7 +6,7 @@ function Product({id, title, image, price, rating}) {
 
   const [{ cart }, dispatch] = useStateValue()
 
-  console.log('This is the basket: ');
+  // console.log('This is the basket: ');
 
   const addToCart= () => {
     // ADD ITEM TO DATA LAYER 

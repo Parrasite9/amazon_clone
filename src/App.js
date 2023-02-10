@@ -10,12 +10,38 @@ import Header from './Components/Header'
 import Home from './Components/Home'
 import Checkout from './Components/Checkout'
 import Login from './Components/Login'
+import { auth } from './Firebase/firebase'
+import { useStateValue } from './Components/StateProvider'
 
 // ==========================
 //    MATERIAL UI ICONS
 // ==========================
 
 const App = () => {
+
+  const [{}, dispatch] = useStateValue()
+
+  useEffect(() => {
+    // WILL ONLY RUN ONCE WHEN THE APP COMPONENT LOADS 
+    auth.onAuthStateChanged((authUser) => {
+      console.log('THE USER IS: ', authUser);
+
+      if (authUser) {
+        // THE USER JUST LOGGED IN / THE USER WAS LOGGED IN 
+        dispatch({
+          type: 'SET_USER',
+          user: authUser,
+        })
+
+      } else {
+        // THE USER IS LOGGED OUT 
+        dispatch({
+          type: 'SET_USER',
+          user: null
+        })
+      }
+    })
+  }, [])
 
   return (
     <>
@@ -29,24 +55,6 @@ const App = () => {
 
       </Routes>
 
-
-
-      {/* <Router>
-        <div className='app'>
-
-
-            <Routes path='/'>
-              <Header />
-              <Home />
-            </Routes> */}
-
-            {/* <Route path='/checkout'>
-              <Header />
-              <h1>I AM A CHECKOUT PAGE</h1>
-            </Route> */}
-
-        {/* </div>
-      </Router> */}
     </>
   )
 }
